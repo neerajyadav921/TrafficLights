@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Lights</title>
+    <style>
+        #box {
+            height: 700px;
+            width: 700px;
+            background-color: black;
+            box-shadow: 10px 10px 100px 10px black;
+            border-radius: 50%;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+
+        <div id="box" draggable="true"> </div>
+    </div>
+    <script>
+        const TrafficLight = () => {
+            let sun = document.getElementById('box')
+            sun.addEventListener("mouseenter", () => {
+                sun.style.boxShadow = "10px 10px 100px 10px red";
+                sun.style.backgroundColor = "red";
+            })
+            sun.addEventListener("click", () => {
+                sun.style.boxShadow = "10px 10px 100px 10px yellow";
+                sun.style.backgroundColor = "yellow";
+            })
+            sun.addEventListener("dblclick", () => {
+                sun.style.boxShadow = "10px 10px 100px 10px green";
+                sun.style.backgroundColor = "green";
+            })
+
+
+        }
+        TrafficLight()
+    </script>
+</body>
+
+</html>
